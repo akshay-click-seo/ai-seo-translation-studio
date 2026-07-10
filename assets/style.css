@@ -1,0 +1,299 @@
+/* ============================================================
+   AI SEO Translation Studio — Custom Streamlit CSS
+   ============================================================ */
+
+/* ── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Root Variables ───────────────────────────────────────── */
+:root {
+    --primary:      #2563eb;
+    --primary-dark: #1d4ed8;
+    --success:      #16a34a;
+    --warning:      #d97706;
+    --danger:       #dc2626;
+    --surface:      #ffffff;
+    --surface-alt:  #f8fafc;
+    --border:       #e2e8f0;
+    --text-primary: #0f172a;
+    --text-muted:   #64748b;
+    --radius:       10px;
+    --shadow:       0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+    --shadow-md:    0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+}
+
+/* ── Global Typography ────────────────────────────────────── */
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+}
+
+/* ── Hide Streamlit branding ──────────────────────────────── */
+#MainMenu  { visibility: hidden; }
+footer     { visibility: hidden; }
+header     { visibility: hidden; }
+
+/* ── App Header ───────────────────────────────────────────── */
+.app-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0ea5e9 100%);
+    padding: 2rem 2.5rem;
+    border-radius: 0 0 var(--radius) var(--radius);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.app-header h1 {
+    color: #ffffff;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.app-header p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0;
+}
+
+/* ── Stat Cards ───────────────────────────────────────────── */
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+
+.stat-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.stat-card .stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.stat-card .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ── Translation Output Box ───────────────────────────────── */
+.translation-box {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    min-height: 120px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* ── TM Hit Badge ─────────────────────────────────────────── */
+.tm-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #dcfce7;
+    color: var(--success);
+    border: 1px solid #bbf7d0;
+    border-radius: 20px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.api-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #dbeafe;
+    color: var(--primary);
+    border: 1px solid #bfdbfe;
+    border-radius: 20px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ── Mode Pills ───────────────────────────────────────────── */
+.mode-pill {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-right: 0.4rem;
+}
+
+.mode-standard  { background: #e0e7ff; color: #3730a3; }
+.mode-seo       { background: #fef3c7; color: #92400e; }
+.mode-html      { background: #d1fae5; color: #065f46; }
+.mode-technical { background: #fce7f3; color: #9d174d; }
+
+/* ── History Table ────────────────────────────────────────── */
+.history-row {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    transition: background 0.15s;
+}
+
+.history-row:hover {
+    background: var(--surface-alt);
+}
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background: #0f172a;
+    border-right: 1px solid #1e293b;
+}
+
+[data-testid="stSidebar"] * {
+    color: #e2e8f0 !important;
+}
+
+[data-testid="stSidebar"] .stSelectbox label,
+[data-testid="stSidebar"] .stTextInput label,
+[data-testid="stSidebar"] .stSlider label {
+    color: #94a3b8 !important;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+[data-testid="stSidebar"] h3 {
+    color: #ffffff !important;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-top: 0.75rem;
+    border-top: 1px solid #1e293b;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────── */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.25rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px 8px 0 0;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    font-size: 0.88rem;
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.stButton > button {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s !important;
+}
+
+.stButton > button[kind="primary"] {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.35) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ── Text Areas ───────────────────────────────────────────── */
+.stTextArea textarea {
+    border-radius: var(--radius) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    border-color: var(--border) !important;
+    transition: border-color 0.2s !important;
+}
+
+.stTextArea textarea:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1) !important;
+}
+
+/* ── Progress Bar ─────────────────────────────────────────── */
+.stProgress > div > div > div > div {
+    background: linear-gradient(90deg, var(--primary) 0%, #0ea5e9 100%);
+    border-radius: 99px;
+}
+
+/* ── Info / Success / Warning / Error ─────────────────────── */
+[data-testid="stInfo"] {
+    border-radius: var(--radius);
+    border-left-color: var(--primary);
+}
+
+[data-testid="stSuccess"] {
+    border-radius: var(--radius);
+    border-left-color: var(--success);
+}
+
+[data-testid="stWarning"] {
+    border-radius: var(--radius);
+    border-left-color: var(--warning);
+}
+
+[data-testid="stError"] {
+    border-radius: var(--radius);
+    border-left-color: var(--danger);
+}
+
+/* ── File Uploader ────────────────────────────────────────── */
+[data-testid="stFileUploader"] {
+    border-radius: var(--radius);
+}
+
+/* ── Metric ───────────────────────────────────────────────── */
+[data-testid="stMetric"] {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    box-shadow: var(--shadow);
+}
+
+/* ── Expander ─────────────────────────────────────────────── */
+.streamlit-expanderHeader {
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+/* ── Dark Mode Support ────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --surface:     #1e293b;
+        --surface-alt: #0f172a;
+        --border:      #334155;
+        --text-primary:#f1f5f9;
+        --text-muted:  #94a3b8;
+    }
+}
